@@ -413,6 +413,7 @@ const parsePropDecorators = (
 
 const buildDeclaration = (def: any | undefined, declaration: Declaration): void => {
   if (def) {
+    def.standalone ??= (declaration.standalone !== false);
     def.inputs = def.inputs || [];
     for (const input of declaration.inputs) {
       if (def.inputs.indexOf(input) === -1) {

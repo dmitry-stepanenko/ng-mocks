@@ -11,5 +11,5 @@ export function isStandalone(declaration: any): boolean {
     return false;
   }
 
-  return collectDeclarations(declaration)[type].standalone === true;
+  return collectDeclarations(declaration)[type].standalone !== false;
 }

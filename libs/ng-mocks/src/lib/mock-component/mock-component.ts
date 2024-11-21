@@ -201,6 +201,7 @@ const decorateClass = (component: Type<any>, mock: Type<any>): void => {
   Component(
     decorateDeclaration(component, mock, meta, {
       template: generateTemplate(meta.queries),
+      standalone: meta.standalone ?? true
     }),
   )(mock);
 };

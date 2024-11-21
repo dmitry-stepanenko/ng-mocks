@@ -28,7 +28,7 @@ const registerTemplateMiddleware = (template: AnyType<any>, meta: Directive): vo
     // nothing to do
   }
 
-  const standalone = (meta as any).__ngMocksStandalone === true;
+  const standalone = (meta as any).__ngMocksStandalone ?? true;
   (isNgDef(template, 'c') ? Component : Directive)({
     ...meta,
     ...set,

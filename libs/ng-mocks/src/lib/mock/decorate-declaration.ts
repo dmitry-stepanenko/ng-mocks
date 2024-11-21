@@ -61,9 +61,7 @@ export default <T extends Component & Directive>(
   if (meta.selector !== undefined) {
     options.selector = meta.selector;
   }
-  if (meta.standalone !== undefined) {
-    options.standalone = meta.standalone;
-  }
+  options.standalone = meta.standalone ?? true;
 
   if (meta.standalone && meta.imports) {
     const [, { imports }] = mockNgDef({ imports: meta.imports, skipExports: true });
